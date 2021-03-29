@@ -1,21 +1,24 @@
 import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
 
 export default function Footer() {
     return (
-        <div className="footer">
-            <Typography color="textSecondary" variant="body2">
-                Created by{"    "}
-                <a
-                    href="https://github.com/wkj9893"
-                    style={{
-                        fontSize: "20px",
-
-                        color: "black",
-                    }}
+        <>
+            <Typography
+                variant="body1"
+                style={{
+                    marginTop: "5%",
+                    marginBottom: "30px",
+                }}
+            >
+                Created by{"    "}{" "}
+                <Link
+                    href="https://github.com/wkj9893/Photo-Gallery"
+                    target="_blank"
                 >
-                    wkj
-                </a>
+                    wkj9893
+                </Link>
             </Typography>
-        </div>
+        </>
     );
 }

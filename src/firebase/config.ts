@@ -4,12 +4,12 @@ import "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAME5L7hgwX-Hn9lBvTWwlDIjeYgJVTa3Y",
-    authDomain: "photo-gallery-d7bec.firebaseapp.com",
-    projectId: "photo-gallery-d7bec",
-    storageBucket: "photo-gallery-d7bec.appspot.com",
-    messagingSenderId: "144611402579",
-    appId: "1:144611402579:web:b2b7a46a1bd28f251077a6",
+    apiKey: "AIzaSyC8yj0tBOIw9Fpfj6DVPQXF_Bqn2bW5ZG0",
+    authDomain: "photo-gallery-119c2.firebaseapp.com",
+    projectId: "photo-gallery-119c2",
+    storageBucket: "photo-gallery-119c2.appspot.com",
+    messagingSenderId: "329833046663",
+    appId: "1:329833046663:web:e2a85eb0f785ae16214e22",
 };
 // Initialize Firebase
 if (firebase.apps.length === 0) {

@@ -1,14 +1,14 @@
-import Title from "../src/components/Title";
-import UploadForm from "../src/components/UploadForm";
-import ImageGrid from "../src/components/ImageGrid";
-import Footer from "../src/components/Footer";
+import React from "react";
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import UploadForm from "./components/UploadForm";
 
 function App() {
     return (
         <div className="App">
-            <Title />
+            <Header />
             <UploadForm />
-            <ImageGrid />
             <Footer />
         </div>
     );

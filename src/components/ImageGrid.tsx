@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import firebase from "../firebase/config";
 
-export default function ImageGrid() {
-    const [docs, setDocs] = useState([]);
+type ChangeProps = {
+    ImageChange: number;
+};
+
+export default function ImageGrid({ ImageChange }: ChangeProps) {
+    const [images, setImages] = useState<Array<any>>([]);
 
     useEffect(() => {
         const firestore = firebase.firestore();
@@ -10,24 +14,22 @@ export default function ImageGrid() {
             .collection("images")
             .orderBy("createdAt", "desc")
             .onSnapshot((snapshot) => {
-                let documents = [];
+                let documents: Array<any> = [];
                 snapshot.forEach((doc) => {
-                    documents.push({ ...doc.data(), id: doc.id });
+                    documents.push(doc.data());
                 });
-                setDocs(documents);
-                console.log(docs);
+                setImages(documents);
             });
         return () => unsub();
-    });
+    }, [ImageChange]);
 
     return (
         <div className="image-grid">
-            {docs &&
-                docs.map((doc) => (
-                    <div className="image-wrap" key={doc.id}>
-                        <img src={doc.url} alt="uploaded pic" />
-                    </div>
-                ))}
+            {images.map((image) => (
+                <div className="image-wrap" key={image.id}>
+                    <img src={image.url} alt="uploaded pic" />
+                </div>
+            ))}
         </div>
     );
 }
